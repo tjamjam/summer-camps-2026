@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -35,13 +37,38 @@
                 The Burlington Parent's Ultimate 2025 Summer Camp Guide
             </h1>
             <p class="mt-2 text-lg text-gray-600">
-                A Curated Report for Your 5-Year-Old
+                A Curated Report for Your 5/6-Year-Old
             </p>
         </div>
     </header>
 
+    <!-- Disclaimer Banner -->
+    <div class="bg-amber-50 border-l-4 border-amber-400 p-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex">
+                <div class="flex-shrink-0">
+                    <svg class="h-5 w-5 text-amber-400" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+                <div class="ml-3">
+                    <h3 class="text-sm font-medium text-amber-800">
+                        Important Disclaimer
+                    </h3>
+                    <div class="mt-2 text-sm text-amber-700">
+                        <p>
+                            <strong>This guide was created using Gemini Research</strong> and is based on 2025 data as a general starting point. 
+                            <strong>Please fact-check all information</strong> directly with camp providers, as dates, costs, and program details may have changed. 
+                            This guide is intended to help you get started with your research, but should not be considered the final source of truth for camp information.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <main class="max-w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
         
         <!-- Introduction -->
         <section class="mb-12">
@@ -88,8 +115,8 @@
                         </div>
                         
                         <div class="bg-green-50 p-4 rounded-lg">
-                            <h3 class="font-semibold text-green-900 mb-2">Non-Profit & Community-Based</h3>
-                            <p class="text-green-800 text-sm">Institutions such as the Greater Burlington YMCA provide well-established, mission-driven programs that focus on holistic child development, including social, physical, and emotional growth. They often have multiple locations and flexible enrollment options.</p>
+                            <h3 class="font-semibold text-gray-900 mb-2">Non-Profit & Community-Based</h3>
+                            <p class="text-gray-800 text-sm">Institutions such as the Greater Burlington YMCA provide well-established, mission-driven programs that focus on holistic child development, including social, physical, and emotional growth. They often have multiple locations and flexible enrollment options.</p>
                         </div>
                         
                         <div class="bg-emerald-50 p-4 rounded-lg">
@@ -128,7 +155,7 @@
                     <div class="mb-6">
                         <h4 class="font-semibold text-gray-800 mb-2">Camp Overview</h4>
                         <p class="text-gray-700 mb-4">
-                            As the city's official recreation department, BPRW offers a wide array of summer programs that are foundational to the Burlington community. Their flagship licensed program, <strong><a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Champ Camp</a></strong>, provides a classic, well-rounded day camp experience focused on skill-building, teamwork, and outdoor play. Activities are diverse and traditional, including arts and crafts, recreational games, music, and nature walks. A significant logistical advantage is the partnership with the Burlington School Food Project, which provides a free lunch and afternoon snack to all campers, greatly simplifying daily prep for parents. BPRW also offers a variety of shorter, specialty sports camps, such as the <strong>Mini Volts</strong> soccer program for ages 4-6.
+                            As the city's official recreation department, BPRW offers a wide array of summer programs that are foundational to the Burlington community. Their flagship licensed program, <strong><a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">Champ Camp</a></strong>, provides a classic, well-rounded day camp experience focused on skill-building, teamwork, and outdoor play. Activities are diverse and traditional, including arts and crafts, recreational games, music, and nature walks. A significant logistical advantage is the partnership with the Burlington School Food Project, which provides a free lunch and afternoon snack to all campers, greatly simplifying daily prep for parents. BPRW also offers a variety of shorter, specialty sports camps, such as the <strong>Mini Volts</strong> soccer program for ages 4-6.
                         </p>
                     </div>
 
@@ -139,7 +166,7 @@
                                 <li><strong>Location(s):</strong> Multiple sites across Burlington. Champ Camp has two primary locations: NORTH at the Robert Miller Center and SOUTH at Champlain Elementary. Specialty camps are held at various parks like Leddy Park and Schifilliti Park.</li>
                                 <li><strong>Age/Grade Range:</strong>
                                     <ul class="ml-4 mt-1 space-y-1">
-                                        <li>• <strong><a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Champ Camp</a>:</strong> Entering Grades 1-5. <em>Note: A 5-year-old who has completed kindergarten and is entering first grade would be eligible. It is advisable to confirm eligibility for a child turning 5 over the summer.</em></li>
+                                        <li>• <strong><a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">Champ Camp</a>:</strong> Entering Grades 1-5. <em>Note: A 5-year-old who has completed kindergarten and is entering first grade would be eligible. It is advisable to confirm eligibility for a child turning 5 over the summer.</em></li>
                                         <li>• <strong>Mini Volts Soccer:</strong> Ages 4-6.</li>
                                     </ul>
                                 </li>
@@ -147,19 +174,19 @@
                                 <li><strong>2025 Session Weeks:</strong> Multiple weeks offered from mid-June through mid-August. Specific dates are available in the online catalog.</li>
                                 <li><strong>Daily Hours:</strong>
                                     <ul class="ml-4 mt-1 space-y-1">
-                                        <li>• <strong><a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Champ Camp</a>:</strong> 8:30 AM - 4:00 PM (based on similar 2021 BPRW camps).</li>
+                                        <li>• <strong><a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">Champ Camp</a>:</strong> 8:30 AM - 4:00 PM (based on similar 2021 BPRW camps).</li>
                                         <li>• <strong>Mini Volts Soccer:</strong> 9:00 AM - 12:00 PM (half-day).</li>
                                     </ul>
                                 </li>
                                 <li><strong>Weekly Cost (2021 Data - <em>Verify for 2025</em>):</strong>
                                     <ul class="ml-4 mt-1 space-y-1">
-                                        <li>• <strong><a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Champ Camp</a>/PAL Camp:</strong> ~$190 Resident / $210 Non-resident.</li>
+                                        <li>• <strong><a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">Champ Camp</a>/PAL Camp:</strong> ~$190 Resident / $210 Non-resident.</li>
                                         <li>• <strong>Mini Volts Soccer:</strong> $125 Resident / $145 Non-resident.</li>
                                     </ul>
                                 </li>
-                                <li><strong>Financial Aid:</strong> Yes. <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Champ Camp</a> is state-licensed and accepts Vermont State Child Care Financial Assistance (CCFAP) subsidy payments. BPRW also offers its own scholarship program for Burlington residents.</li>
-                                <li><strong>Meals:</strong> Free lunch and afternoon snack are provided for <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Champ Camp</a>.</li>
-                                <li><strong>Transportation:</strong> Limited shuttle service to <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Champ Camp</a> is available from the ONE Community Center but must be requested by May 31.</li>
+                                <li><strong>Financial Aid:</strong> Yes. <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">Champ Camp</a> is state-licensed and accepts Vermont State Child Care Financial Assistance (CCFAP) subsidy payments. BPRW also offers its own scholarship program for Burlington residents.</li>
+                                <li><strong>Meals:</strong> Free lunch and afternoon snack are provided for <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">Champ Camp</a>.</li>
+                                <li><strong>Transportation:</strong> Limited shuttle service to <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">Champ Camp</a> is available from the ONE Community Center but must be requested by May 31.</li>
                             </ul>
                         </div>
                     </div>
@@ -172,8 +199,8 @@
                                 <p class="text-blue-800 text-sm">BPRW camps provide a reliable and fun traditional summer experience with a healthy mix of activities. The emphasis on teamwork, making friends, and active play is excellent for social development. However, they may not offer the depth of specialized instruction found in dedicated arts or nature programs.</p>
                             </div>
                             <div class="bg-green-50 p-4 rounded-lg">
-                                <h5 class="font-semibold text-green-900 mb-1">Health & Safety: 9/10</h5>
-                                <p class="text-green-800 text-sm">As a state-licensed program, Champ Camp meets rigorous health and safety standards. BPRW has clear, formalized procedures for medication administration and communicating medical needs. The provision of meals through a school food program adds another layer of regulated safety and nutrition.</p>
+                                <h5 class="font-semibold text-gray-900 mb-1">Health & Safety: 9/10</h5>
+                                <p class="text-gray-800 text-sm">As a state-licensed program, Champ Camp meets rigorous health and safety standards. BPRW has clear, formalized procedures for medication administration and communicating medical needs. The provision of meals through a school food program adds another layer of regulated safety and nutrition.</p>
                             </div>
                             <div class="bg-purple-50 p-4 rounded-lg">
                                 <h5 class="font-semibold text-purple-900 mb-1">Logistics & Affordability: 10/10</h5>
@@ -254,8 +281,8 @@
                                 <p class="text-blue-800 text-sm">The YMCA's philosophy is strong, focusing on character development alongside fun. The variety of camp types—from the generalist Camp Koda to the specialized Camp Abnaki—offers excellent choice. The emphasis on recreational play and hands-on activities is well-suited for this age group.</p>
                             </div>
                             <div class="bg-green-50 p-4 rounded-lg">
-                                <h5 class="font-semibold text-green-900 mb-1">Health & Safety: 9/10</h5>
-                                <p class="text-green-800 text-sm">As a major, established organization, the YMCA prioritizes safety. The licensing of Camp Koda ensures it meets state standards. Staff undergo rigorous screening and training, including CPR and First Aid. The "Nut Aware" policy at Camp Abnaki shows attention to allergy management.</p>
+                                <h5 class="font-semibold text-gray-900 mb-1">Health & Safety: 9/10</h5>
+                                <p class="text-gray-800 text-sm">As a major, established organization, the YMCA prioritizes safety. The licensing of Camp Koda ensures it meets state standards. Staff undergo rigorous screening and training, including CPR and First Aid. The "Nut Aware" policy at Camp Abnaki shows attention to allergy management.</p>
                             </div>
                             <div class="bg-purple-50 p-4 rounded-lg">
                                 <h5 class="font-semibold text-purple-900 mb-1">Logistics & Affordability: 8/10</h5>
@@ -320,8 +347,8 @@
                                 <p class="text-blue-800 text-sm">This camp offers an exceptional, specialized experience for children who thrive outdoors. The curriculum is thoughtfully designed and executed by expert naturalists, fostering curiosity, resilience, and a deep appreciation for the environment. The low instructor-to-camper ratio (1:6 for preschool) ensures high-quality, individualized attention. This is an immersive, screen-free experience that is highly developmental.</p>
                             </div>
                             <div class="bg-green-50 p-4 rounded-lg">
-                                <h5 class="font-semibold text-green-900 mb-1">Health & Safety: 9/10</h5>
-                                <p class="text-green-800 text-sm">Audubon demonstrates a strong commitment to safety with clear eligibility criteria, a mandatory immunization policy, and staff trained in wilderness first aid. The environment is rustic and primarily outdoors, which carries inherent risks, but these are managed professionally by trained staff.</p>
+                                <h5 class="font-semibold text-gray-900 mb-1">Health & Safety: 9/10</h5>
+                                <p class="text-gray-800 text-sm">Audubon demonstrates a strong commitment to safety with clear eligibility criteria, a mandatory immunization policy, and staff trained in wilderness first aid. The environment is rustic and primarily outdoors, which carries inherent risks, but these are managed professionally by trained staff.</p>
                             </div>
                             <div class="bg-purple-50 p-4 rounded-lg">
                                 <h5 class="font-semibold text-purple-900 mb-1">Logistics & Affordability: 5/10</h5>
@@ -373,8 +400,8 @@
                                 <p class="text-blue-800 text-sm">ECHO provides a unique and highly stimulating environment that blends formal STEM learning with the fun of museum exploration. The access to exhibits, live animals, and hands-on engineering challenges is a significant draw. The program, led by professional educators, is excellent for fostering curiosity and a love for science.</p>
                             </div>
                             <div class="bg-green-50 p-4 rounded-lg">
-                                <h5 class="font-semibold text-green-900 mb-1">Health & Safety: 8/10</h5>
-                                <p class="text-green-800 text-sm">As a major public institution, ECHO maintains high standards of safety and supervision. Camp staff includes full-time educators supported by counselors. Detailed policies are available in a Camp Family Handbook, though specific details were not in the provided research.</p>
+                                <h5 class="font-semibold text-gray-900 mb-1">Health & Safety: 8/10</h5>
+                                <p class="text-gray-800 text-sm">As a major public institution, ECHO maintains high standards of safety and supervision. Camp staff includes full-time educators supported by counselors. Detailed policies are available in a Camp Family Handbook, though specific details were not in the provided research.</p>
                             </div>
                             <div class="bg-purple-50 p-4 rounded-lg">
                                 <h5 class="font-semibold text-purple-900 mb-1">Logistics & Affordability: 6/10</h5>
@@ -429,7 +456,7 @@
 
                     <!-- Burlington City Arts -->
                     <div class="mb-8 border-l-4 border-arts pl-6">
-                        <h4 class="font-semibold text-gray-800 mb-2"><a href="https://www.burlingtoncityarts.org" target="_blank" class="text-purple-600 hover:text-purple-800 underline">Burlington City Arts (BCA)</a></h4>
+                        <h4 class="font-semibold text-gray-800 mb-2"><a href="https://www.burlingtoncityarts.org" target="_blank" class="text-gray-900 hover:text-purple-800 underline">Burlington City Arts (BCA)</a></h4>
                         <ul class="space-y-2 text-sm text-gray-700">
                             <li><strong>Overview:</strong> BCA provides award-winning, in-depth studio arts experiences at its Pine Street studios. Camps are taught by professional teaching artists and cover a wide range of media, including clay, jewelry, painting, and more. For ages 6-8, themes like "Clay Creations" and "Mini Worlds" offer hands-on, project-based fun.</li>
                             <li><strong>Logistics:</strong> Registration for Burlington residents opens <strong>February 5, 2025, at 12:00 PM</strong>, with general registration opening February 10. BCA offers a flexible half-day schedule (8:00-11:00 AM or 12:00-3:00 PM). To create a full day, parents must register and pay for a separate lunch supervision hour (11:00 AM - 12:00 PM) and can add an Aftercare Art Club (3:00-5:00 PM). 2025 half-day camps cost ~$189/week for residents, with lunch and aftercare adding $60 and $120 per week, respectively.</li>
@@ -474,10 +501,13 @@
 
                 <div class="grid gap-6 md:grid-cols-1 lg:grid-cols-3">
                     <!-- Child's Experience & Development -->
-                    <div class="bg-blue-50 p-6 rounded-lg">
-                        <h3 class="text-lg font-semibold text-blue-900 mb-4">Child's Experience & Development (Weight: 40%)</h3>
-                        <p class="text-blue-800 text-sm mb-4">This category assesses the quality of the camp's programming and its potential impact on a child's growth, learning, and enjoyment.</p>
-                        <ul class="space-y-2 text-sm text-blue-800">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="text-center mb-4">
+                            <div class="text-6xl mb-2">🌱</div>
+                            <h3 class="text-lg font-semibold text-gray-900">Child's Experience & Development (Weight: 40%)</h3>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-4">This category assesses the quality of the camp's programming and its potential impact on a child's growth, learning, and enjoyment.</p>
+                        <ul class="space-y-2 text-sm text-gray-700">
                             <li><strong>Curriculum & Philosophy (4 points):</strong> Evaluates the thoughtfulness and age-appropriateness of the camp's activities. High scores are given to programs with a clear educational philosophy, unique and engaging themes, and hands-on, experiential learning opportunities.</li>
                             <li><strong>Staff Quality & Ratio (3 points):</strong> Considers the qualifications of the camp staff and the level of supervision. Camps with experienced educators, specialized instructors, and low staff-to-child ratios receive higher scores.</li>
                             <li><strong>Facilities & Environment (2 points):</strong> Rates the physical setting and resources available to campers. This includes access to unique environments and the quality of indoor and outdoor spaces.</li>
@@ -486,10 +516,13 @@
                     </div>
 
                     <!-- Health & Safety -->
-                    <div class="bg-green-50 p-6 rounded-lg">
-                        <h3 class="text-lg font-semibold text-green-900 mb-4">Health & Safety (Weight: 35%)</h3>
-                        <p class="text-green-800 text-sm mb-4">This category measures the structures and policies in place to ensure a safe and secure environment for every child.</p>
-                        <ul class="space-y-2 text-sm text-green-800">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="text-center mb-4">
+                            <div class="text-6xl mb-2">🛡️</div>
+                            <h3 class="text-lg font-semibold text-gray-900">Health & Safety (Weight: 35%)</h3>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-4">This category measures the structures and policies in place to ensure a safe and secure environment for every child.</p>
+                        <ul class="space-y-2 text-sm text-gray-700">
                             <li><strong>Licensing & Certifications (4 points):</strong> The highest scores are awarded to camps that are state-licensed, as this signifies adherence to a comprehensive set of state-mandated safety, health, and staffing standards. Staff certifications are also heavily weighted.</li>
                             <li><strong>Policies & Procedures (3 points):</strong> Examines the clarity and accessibility of the camp's policies regarding critical issues like medication administration, allergy management, and emergency protocols.</li>
                             <li><strong>Supervision & Environment (2 points):</strong> Assesses the physical security of the camp location and the procedures for camper supervision, including drop-off and pick-up protocols.</li>
@@ -498,10 +531,13 @@
                     </div>
 
                     <!-- Logistics & Affordability -->
-                    <div class="bg-purple-50 p-6 rounded-lg">
-                        <h3 class="text-lg font-semibold text-purple-900 mb-4">Logistics & Affordability (Weight: 25%)</h3>
-                        <p class="text-purple-800 text-sm mb-4">This category evaluates the practical aspects of attending the camp, including cost, convenience, and accessibility for working families.</p>
-                        <ul class="space-y-2 text-sm text-purple-800">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="text-center mb-4">
+                            <div class="text-6xl mb-2">🚗</div>
+                            <h3 class="text-lg font-semibold text-gray-900">Logistics & Affordability (Weight: 25%)</h3>
+                        </div>
+                        <p class="text-gray-700 text-sm mb-4">This category evaluates the practical aspects of attending the camp, including cost, convenience, and accessibility for working families.</p>
+                        <ul class="space-y-2 text-sm text-gray-700">
                             <li><strong>Cost & Value (4 points):</strong> This score is based on the total weekly cost, including any mandatory add-ons for a full day of care. It also considers what is included in the price, such as meals, snacks, or special materials.</li>
                             <li><strong>Accessibility & Financial Aid (3 points):</strong> Measures the camp's commitment to economic accessibility. The ability to accept state childcare subsidies is a major factor, as are the availability and ease of application for scholarships.</li>
                             <li><strong>Hours & Flexibility (2 points):</strong> Evaluates how well the camp's schedule accommodates the needs of working parents. Camps with longer standard hours and available, affordable pre- and after-care options score higher.</li>
@@ -527,24 +563,24 @@
                     </p>
                 </div>
 
-                <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6">
-                    <p class="text-blue-800 text-sm">
+                <div class="bg-gray-50 border-l-4 border-gray-400 p-4 mb-6">
+                    <p class="text-gray-800 text-sm">
                         <strong>Important:</strong> Last Day of School (Tentative): June 15, 2026.
                     </p>
                 </div>
 
                 <!-- Cost Calculator -->
-                <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-6">
+                <div class="bg-gray-50 border-l-4 border-gray-400 p-4 mb-6">
                     <div class="flex items-center justify-between">
                         <div>
-                            <h3 class="text-lg font-semibold text-green-900 mb-2">Summer Camp Cost Calculator</h3>
-                            <p class="text-green-800 text-sm">Select one camp per week to calculate your total summer cost.</p>
+                            <h3 class="text-lg font-semibold text-gray-900 mb-2">Summer Camp Cost Calculator</h3>
+                            <p class="text-gray-800 text-sm">Select one camp per week to calculate your total summer cost.</p>
                         </div>
                         <div class="text-right">
-                            <div class="text-2xl font-bold text-green-900" id="total-cost">$0</div>
-                            <div class="text-sm text-green-700">Total Estimated Cost</div>
-                            <div class="text-lg font-semibold text-green-800 mt-2" id="full-day-cost">+$0</div>
-                            <div class="text-sm text-green-600">Full-Day Care Add-on</div>
+                            <div class="text-2xl font-bold text-gray-900" id="total-cost">$0</div>
+                            <div class="text-sm text-gray-700">Total Estimated Cost</div>
+                            <div class="text-lg font-semibold text-gray-800 mt-2" id="full-day-cost">+$0</div>
+                            <div class="text-sm text-gray-900">Full-Day Care Add-on</div>
                         </div>
                     </div>
                 </div>
@@ -556,9 +592,9 @@
                         <thead class="bg-gray-50">
                             <tr>
                                 <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-300">Camp</th>
-                                <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-300 cursor-pointer hover:bg-gray-100" onclick="sortTable(1)">Experience <span class="sort-indicator">↕</span></th>
-                                <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-300 cursor-pointer hover:bg-gray-100" onclick="sortTable(2)">Safety <span class="sort-indicator">↕</span></th>
-                                <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-300 cursor-pointer hover:bg-gray-100" onclick="sortTable(3)">Logistics <span class="sort-indicator">↕</span></th>
+                                <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-300 cursor-pointer hover:bg-gray-100" onclick="sortTable(1)">🌱 Experience <span class="sort-indicator">↕</span></th>
+                                <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-300 cursor-pointer hover:bg-gray-100" onclick="sortTable(2)">🛡️ Safety <span class="sort-indicator">↕</span></th>
+                                <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-300 cursor-pointer hover:bg-gray-100" onclick="sortTable(3)">🚗 Logistics <span class="sort-indicator">↕</span></th>
                                 <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-300">June 16-20</th>
                                 <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-300">June 23-27</th>
                                 <th class="px-3 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider border-r border-gray-300">June 30-July 3</th>
@@ -577,17 +613,17 @@
                                 <td class="px-3 py-4 text-sm font-medium text-gray-900 border-r border-gray-300">
                                     <div class="bg-blue-50 p-2 rounded">
                                         <strong>Burlington Parks & Rec</strong><br>
-                                        <span class="text-xs text-blue-600">City-Run</span>
+                                        <span class="text-xs text-gray-900">City-Run</span>
                                     </div>
                                 </td>
                                 <td class="px-3 py-4 text-sm text-gray-700 border-r border-gray-300" data-sort="7">
-                                    <span class="text-lg font-semibold text-blue-600">7/10</span>
+                                    <span class="text-lg font-semibold text-gray-900">7/10</span>
                                 </td>
                                 <td class="px-3 py-4 text-sm text-gray-700 border-r border-gray-300" data-sort="9">
-                                    <span class="text-lg font-semibold text-green-600">9/10</span>
+                                    <span class="text-lg font-semibold text-gray-900">9/10</span>
                                 </td>
                                 <td class="px-3 py-4 text-sm text-gray-700 border-r border-gray-300" data-sort="10">
-                                    <span class="text-lg font-semibold text-purple-600">10/10</span>
+                                    <span class="text-lg font-semibold text-gray-900">10/10</span>
                                 </td>
                                 <td class="px-3 py-4 text-sm text-gray-700 border-r border-gray-300">
                                     <div class="bg-blue-50 p-2 rounded text-xs">
@@ -720,13 +756,13 @@
                                     </div>
                                 </td>
                                 <td class="px-3 py-4 text-sm text-gray-700 border-r border-gray-300" data-sort="10">
-                                    <span class="text-lg font-semibold text-blue-600">10/10</span>
+                                    <span class="text-lg font-semibold text-gray-900">10/10</span>
                                 </td>
                                 <td class="px-3 py-4 text-sm text-gray-700 border-r border-gray-300" data-sort="9">
-                                    <span class="text-lg font-semibold text-green-600">9/10</span>
+                                    <span class="text-lg font-semibold text-gray-900">9/10</span>
                                 </td>
                                 <td class="px-3 py-4 text-sm text-gray-700 border-r border-gray-300" data-sort="5">
-                                    <span class="text-lg font-semibold text-purple-600">5/10</span>
+                                    <span class="text-lg font-semibold text-gray-900">5/10</span>
                                 </td>
                                 <td class="px-3 py-4 text-sm text-gray-700 border-r border-gray-300">-</td>
                                 <td class="px-3 py-4 text-sm text-gray-700 border-r border-gray-300">
@@ -832,18 +868,18 @@
                             <tr class="hover:bg-gray-50">
                                 <td class="px-3 py-4 text-sm font-medium text-gray-900 border-r border-gray-300">
                                     <div class="bg-purple-50 p-2 rounded">
-                                        <strong><a href="https://www.burlingtoncityarts.org" target="_blank" class="text-purple-600 hover:text-purple-800 underline">Burlington City Arts</a></strong><br>
-                                        <span class="text-xs text-purple-600">Arts/Performance</span>
+                                        <strong><a href="https://www.burlingtoncityarts.org" target="_blank" class="text-gray-900 hover:text-purple-800 underline">Burlington City Arts</a></strong><br>
+                                        <span class="text-xs text-gray-900">Arts/Performance</span>
                                     </div>
                                 </td>
                                 <td class="px-3 py-4 text-sm text-gray-700 border-r border-gray-300" data-sort="9">
-                                    <span class="text-lg font-semibold text-blue-600">9/10</span>
+                                    <span class="text-lg font-semibold text-gray-900">9/10</span>
                                 </td>
                                 <td class="px-3 py-4 text-sm text-gray-700 border-r border-gray-300" data-sort="8">
-                                    <span class="text-lg font-semibold text-green-600">8/10</span>
+                                    <span class="text-lg font-semibold text-gray-900">8/10</span>
                                 </td>
                                 <td class="px-3 py-4 text-sm text-gray-700 border-r border-gray-300" data-sort="6">
-                                    <span class="text-lg font-semibold text-purple-600">6/10</span>
+                                    <span class="text-lg font-semibold text-gray-900">6/10</span>
                                 </td>
                                 <td class="px-3 py-4 text-sm text-gray-700 border-r border-gray-300">
                                     <div class="bg-purple-50 p-2 rounded text-xs">
@@ -937,17 +973,17 @@
                                 <td class="px-3 py-4 text-sm font-medium text-gray-900 border-r border-gray-300">
                                     <div class="bg-green-50 p-2 rounded">
                                         <strong>Greater Burlington YMCA</strong><br>
-                                        <span class="text-xs text-green-600">Non-Profit/Community</span>
+                                        <span class="text-xs text-gray-900">Non-Profit/Community</span>
                                     </div>
                                 </td>
                                 <td class="px-3 py-4 text-sm text-gray-700 border-r border-gray-300" data-sort="8">
-                                    <span class="text-lg font-semibold text-blue-600">8/10</span>
+                                    <span class="text-lg font-semibold text-gray-900">8/10</span>
                                 </td>
                                 <td class="px-3 py-4 text-sm text-gray-700 border-r border-gray-300" data-sort="9">
-                                    <span class="text-lg font-semibold text-green-600">9/10</span>
+                                    <span class="text-lg font-semibold text-gray-900">9/10</span>
                                 </td>
                                 <td class="px-3 py-4 text-sm text-gray-700 border-r border-gray-300" data-sort="8">
-                                    <span class="text-lg font-semibold text-purple-600">8/10</span>
+                                    <span class="text-lg font-semibold text-gray-900">8/10</span>
                                 </td>
                                 <td class="px-3 py-4 text-sm text-gray-700 border-r border-gray-300">
                                     <div class="bg-green-50 p-2 rounded text-xs">
@@ -1059,13 +1095,13 @@
                                     </div>
                                 </td>
                                 <td class="px-3 py-4 text-sm text-gray-700 border-r border-gray-300" data-sort="10">
-                                    <span class="text-lg font-semibold text-blue-600">10/10</span>
+                                    <span class="text-lg font-semibold text-gray-900">10/10</span>
                                 </td>
                                 <td class="px-3 py-4 text-sm text-gray-700 border-r border-gray-300" data-sort="9">
-                                    <span class="text-lg font-semibold text-green-600">9/10</span>
+                                    <span class="text-lg font-semibold text-gray-900">9/10</span>
                                 </td>
                                 <td class="px-3 py-4 text-sm text-gray-700 border-r border-gray-300" data-sort="5">
-                                    <span class="text-lg font-semibold text-purple-600">5/10</span>
+                                    <span class="text-lg font-semibold text-gray-900">5/10</span>
                                 </td>
                                 <td class="px-3 py-4 text-sm text-gray-700 border-r border-gray-300">-</td>
                                 <td class="px-3 py-4 text-sm text-gray-700 border-r border-gray-300">
@@ -1158,17 +1194,17 @@
                                 <td class="px-3 py-4 text-sm font-medium text-gray-900 border-r border-gray-300">
                                     <div class="bg-purple-50 p-2 rounded">
                                         <strong>The Flynn</strong><br>
-                                        <span class="text-xs text-purple-600">Arts/Performance</span>
+                                        <span class="text-xs text-gray-900">Arts/Performance</span>
                                     </div>
                                 </td>
                                 <td class="px-3 py-4 text-sm text-gray-700 border-r border-gray-300" data-sort="9">
-                                    <span class="text-lg font-semibold text-blue-600">9/10</span>
+                                    <span class="text-lg font-semibold text-gray-900">9/10</span>
                                 </td>
                                 <td class="px-3 py-4 text-sm text-gray-700 border-r border-gray-300" data-sort="8">
-                                    <span class="text-lg font-semibold text-green-600">8/10</span>
+                                    <span class="text-lg font-semibold text-gray-900">8/10</span>
                                 </td>
                                 <td class="px-3 py-4 text-sm text-gray-700 border-r border-gray-300" data-sort="7">
-                                    <span class="text-lg font-semibold text-purple-600">7/10</span>
+                                    <span class="text-lg font-semibold text-gray-900">7/10</span>
                                 </td>
                                 <td class="px-3 py-4 text-sm text-gray-700 border-r border-gray-300">
                                     <div class="bg-purple-50 p-2 rounded text-xs">
@@ -1270,8 +1306,8 @@
                         </div>
 
                         <div class="bg-green-50 p-6 rounded-lg">
-                            <h4 class="font-semibold text-green-900 mb-2">Best for Full-Day Coverage & Working Parents</h4>
-                            <p class="text-green-800 text-sm">
+                            <h4 class="font-semibold text-gray-900 mb-2">Best for Full-Day Coverage & Working Parents</h4>
+                            <p class="text-gray-800 text-sm">
                                 <strong>Greater Burlington YMCA's Camp Koda</strong> stands out with its comprehensive 8:30 AM to 5:30 PM schedule, providing a full day of care without the need for extra fees. <strong>School's Out</strong> in South Burlington also offers excellent full-day coverage from 8:00 AM to 5:30 PM.
                             </p>
                         </div>
@@ -1308,24 +1344,24 @@
                             <h4 class="font-semibold text-emerald-900 mb-3">Plan 1: The Nature Explorer</h4>
                             <p class="text-emerald-800 text-sm mb-3">This plan prioritizes deep immersion in the outdoors but requires a commitment to driving and a bit of luck with lotteries.</p>
                             <ul class="text-emerald-800 text-sm space-y-1 mb-4">
-                                <li>• <strong>June 16-20:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Champ Camp</a> (full-day coverage)</li>
-                                <li>• <strong>June 23-27:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Champ Camp</a> (full-day coverage)</li>
-                                <li>• <strong>June 30-July 3:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Champ Camp</a> (4-day week)</li>
-                                <li>• <strong>July 7-11:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Champ Camp</a> (full-day coverage)</li>
-                                <li>• <strong>July 14-18:</strong> <a href="https://vt.audubon.org" target="_blank" class="text-green-600 hover:text-green-800 underline">Audubon Vermont</a>'s "Woodland Wanderers" (Ages 5-6)</li>
-                                <li>• <strong>July 21-25:</strong> <a href="https://www.crowspath.org" target="_blank" class="text-green-600 hover:text-green-800 underline">Crow's Path</a> "Red Rocks Nature Camp" (K-5)</li>
-                                <li>• <strong>July 28-Aug 1:</strong> <a href="https://shelburnefarms.org" target="_blank" class="text-green-600 hover:text-green-800 underline">Shelburne Farms</a> Day Camp (Ages 5-6)</li>
-                                <li>• <strong>Aug 4-8:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Champ Camp</a> (full-day coverage)</li>
-                                <li>• <strong>Aug 11-15:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Champ Camp</a> (full-day coverage)</li>
-                                <li>• <strong>Aug 18-22:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Champ Camp</a> (full-day coverage)</li>
+                                <li>• <strong>June 16-20:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">Champ Camp</a> (full-day coverage)</li>
+                                <li>• <strong>June 23-27:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">Champ Camp</a> (full-day coverage)</li>
+                                <li>• <strong>June 30-July 3:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">Champ Camp</a> (4-day week)</li>
+                                <li>• <strong>July 7-11:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">Champ Camp</a> (full-day coverage)</li>
+                                <li>• <strong>July 14-18:</strong> <a href="https://vt.audubon.org" target="_blank" class="text-gray-900 hover:text-gray-800 underline">Audubon Vermont</a>'s "Woodland Wanderers" (Ages 5-6)</li>
+                                <li>• <strong>July 21-25:</strong> <a href="https://www.crowspath.org" target="_blank" class="text-gray-900 hover:text-gray-800 underline">Crow's Path</a> "Red Rocks Nature Camp" (K-5)</li>
+                                <li>• <strong>July 28-Aug 1:</strong> <a href="https://shelburnefarms.org" target="_blank" class="text-gray-900 hover:text-gray-800 underline">Shelburne Farms</a> Day Camp (Ages 5-6)</li>
+                                <li>• <strong>Aug 4-8:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">Champ Camp</a> (full-day coverage)</li>
+                                <li>• <strong>Aug 11-15:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">Champ Camp</a> (full-day coverage)</li>
+                                <li>• <strong>Aug 18-22:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">Champ Camp</a> (full-day coverage)</li>
                             </ul>
                             <div class="bg-emerald-100 p-3 rounded border-l-4 border-emerald-400">
                                 <div class="text-sm font-semibold text-emerald-900">Estimated Cost Breakdown:</div>
                                 <div class="text-sm text-emerald-800 mt-1">
-                                    • <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Champ Camp</a> (7 weeks): $1,330<br>
-                                    • <a href="https://vt.audubon.org" target="_blank" class="text-green-600 hover:text-green-800 underline">Woodland Wanderers</a>: $300<br>
-                                    • <a href="https://www.crowspath.org" target="_blank" class="text-green-600 hover:text-green-800 underline">Red Rocks Nature Camp</a>: $425<br>
-                                    • <a href="https://shelburnefarms.org" target="_blank" class="text-green-600 hover:text-green-800 underline">Shelburne Farms</a>: ~$350 (estimated)<br>
+                                    • <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">Champ Camp</a> (7 weeks): $1,330<br>
+                                    • <a href="https://vt.audubon.org" target="_blank" class="text-gray-900 hover:text-gray-800 underline">Woodland Wanderers</a>: $300<br>
+                                    • <a href="https://www.crowspath.org" target="_blank" class="text-gray-900 hover:text-gray-800 underline">Red Rocks Nature Camp</a>: $425<br>
+                                    • <a href="https://shelburnefarms.org" target="_blank" class="text-gray-900 hover:text-gray-800 underline">Shelburne Farms</a>: ~$350 (estimated)<br>
                                     • <strong>Total: ~$2,405</strong>
                                 </div>
                             </div>
@@ -1335,23 +1371,23 @@
                             <h4 class="font-semibold text-purple-900 mb-3">Plan 2: The City Artist</h4>
                             <p class="text-purple-800 text-sm mb-3">This schedule focuses on creative expression and is logistically convenient for families living or working in Burlington.</p>
                             <ul class="text-purple-800 text-sm space-y-1 mb-4">
-                                <li>• <strong>June 16-20:</strong> <a href="https://www.burlingtoncityarts.org" target="_blank" class="text-purple-600 hover:text-purple-800 underline">BCA</a> "Clay Creations" + lunch + aftercare</li>
-                                <li>• <strong>June 23-27:</strong> <a href="https://www.burlingtoncityarts.org" target="_blank" class="text-purple-600 hover:text-purple-800 underline">BCA</a> "Stuffies" + lunch + aftercare</li>
-                                <li>• <strong>June 30-July 3:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Champ Camp</a> (4-day week)</li>
-                                <li>• <strong>July 7-11:</strong> <a href="https://www.flynncenter.org" target="_blank" class="text-purple-600 hover:text-purple-800 underline">The Flynn</a>'s "It's Not Just a Box" + aftercare</li>
-                                <li>• <strong>July 14-18:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Champ Camp</a> (full-day coverage)</li>
-                                <li>• <strong>July 21-25:</strong> <a href="https://www.burlingtoncityarts.org" target="_blank" class="text-purple-600 hover:text-purple-800 underline">BCA</a> "Mini Worlds" + lunch + aftercare</li>
-                                <li>• <strong>July 28-Aug 1:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Champ Camp</a> (full-day coverage)</li>
-                                <li>• <strong>Aug 4-8:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Champ Camp</a> (full-day coverage)</li>
-                                <li>• <strong>Aug 11-15:</strong> <a href="https://www.burlingtoncityarts.org" target="_blank" class="text-purple-600 hover:text-purple-800 underline">BCA</a> "Magical Makers" + lunch + aftercare</li>
-                                <li>• <strong>Aug 18-22:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Champ Camp</a> (full-day coverage)</li>
+                                <li>• <strong>June 16-20:</strong> <a href="https://www.burlingtoncityarts.org" target="_blank" class="text-gray-900 hover:text-purple-800 underline">BCA</a> "Clay Creations" + lunch + aftercare</li>
+                                <li>• <strong>June 23-27:</strong> <a href="https://www.burlingtoncityarts.org" target="_blank" class="text-gray-900 hover:text-purple-800 underline">BCA</a> "Stuffies" + lunch + aftercare</li>
+                                <li>• <strong>June 30-July 3:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">Champ Camp</a> (4-day week)</li>
+                                <li>• <strong>July 7-11:</strong> <a href="https://www.flynncenter.org" target="_blank" class="text-gray-900 hover:text-purple-800 underline">The Flynn</a>'s "It's Not Just a Box" + aftercare</li>
+                                <li>• <strong>July 14-18:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">Champ Camp</a> (full-day coverage)</li>
+                                <li>• <strong>July 21-25:</strong> <a href="https://www.burlingtoncityarts.org" target="_blank" class="text-gray-900 hover:text-purple-800 underline">BCA</a> "Mini Worlds" + lunch + aftercare</li>
+                                <li>• <strong>July 28-Aug 1:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">Champ Camp</a> (full-day coverage)</li>
+                                <li>• <strong>Aug 4-8:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">Champ Camp</a> (full-day coverage)</li>
+                                <li>• <strong>Aug 11-15:</strong> <a href="https://www.burlingtoncityarts.org" target="_blank" class="text-gray-900 hover:text-purple-800 underline">BCA</a> "Magical Makers" + lunch + aftercare</li>
+                                <li>• <strong>Aug 18-22:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">Champ Camp</a> (full-day coverage)</li>
                             </ul>
                             <div class="bg-purple-100 p-3 rounded border-l-4 border-purple-400">
                                 <div class="text-sm font-semibold text-purple-900">Estimated Cost Breakdown:</div>
                                 <div class="text-sm text-purple-800 mt-1">
-                                    • <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Champ Camp</a> (5 weeks): $950<br>
-                                    • <a href="https://www.burlingtoncityarts.org" target="_blank" class="text-purple-600 hover:text-purple-800 underline">BCA</a> camps (4 weeks): $756 + $240 (lunch) + $480 (aftercare) = $1,476<br>
-                                    • <a href="https://www.flynncenter.org" target="_blank" class="text-purple-600 hover:text-purple-800 underline">The Flynn</a> camp: $250 + $120 (aftercare) = $370<br>
+                                    • <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">Champ Camp</a> (5 weeks): $950<br>
+                                    • <a href="https://www.burlingtoncityarts.org" target="_blank" class="text-gray-900 hover:text-purple-800 underline">BCA</a> camps (4 weeks): $756 + $240 (lunch) + $480 (aftercare) = $1,476<br>
+                                    • <a href="https://www.flynncenter.org" target="_blank" class="text-gray-900 hover:text-purple-800 underline">The Flynn</a> camp: $250 + $120 (aftercare) = $370<br>
                                     • <strong>Total: ~$2,796</strong>
                                 </div>
                             </div>
@@ -1361,23 +1397,23 @@
                             <h4 class="font-semibold text-blue-900 mb-3">Plan 3: The Balanced Budget</h4>
                             <p class="text-blue-800 text-sm mb-3">This approach uses an affordable, reliable base camp and supplements it with one or two specialty weeks.</p>
                             <ul class="text-blue-800 text-sm space-y-1 mb-4">
-                                <li>• <strong>June 16-20:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Champ Camp</a> (full-day coverage)</li>
-                                <li>• <strong>June 23-27:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Champ Camp</a> (full-day coverage)</li>
-                                <li>• <strong>June 30-July 3:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Champ Camp</a> (4-day week)</li>
-                                <li>• <strong>July 7-11:</strong> <a href="https://www.echovermont.org" target="_blank" class="text-green-600 hover:text-green-800 underline">ECHO Leahy Center</a> camp + aftercare</li>
-                                <li>• <strong>July 14-18:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Champ Camp</a> (full-day coverage)</li>
-                                <li>• <strong>July 21-25:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Champ Camp</a> (full-day coverage)</li>
-                                <li>• <strong>July 28-Aug 1:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Champ Camp</a> (full-day coverage)</li>
-                                <li>• <strong>Aug 4-8:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Champ Camp</a> (full-day coverage)</li>
-                                <li>• <strong>Aug 11-15:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">PAL Camp</a> (full-day coverage)</li>
-                                <li>• <strong>Aug 18-22:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">PAL Camp</a> (full-day coverage)</li>
+                                <li>• <strong>June 16-20:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">Champ Camp</a> (full-day coverage)</li>
+                                <li>• <strong>June 23-27:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">Champ Camp</a> (full-day coverage)</li>
+                                <li>• <strong>June 30-July 3:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">Champ Camp</a> (4-day week)</li>
+                                <li>• <strong>July 7-11:</strong> <a href="https://www.echovermont.org" target="_blank" class="text-gray-900 hover:text-gray-800 underline">ECHO Leahy Center</a> camp + aftercare</li>
+                                <li>• <strong>July 14-18:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">Champ Camp</a> (full-day coverage)</li>
+                                <li>• <strong>July 21-25:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">Champ Camp</a> (full-day coverage)</li>
+                                <li>• <strong>July 28-Aug 1:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">Champ Camp</a> (full-day coverage)</li>
+                                <li>• <strong>Aug 4-8:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">Champ Camp</a> (full-day coverage)</li>
+                                <li>• <strong>Aug 11-15:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">PAL Camp</a> (full-day coverage)</li>
+                                <li>• <strong>Aug 18-22:</strong> <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">PAL Camp</a> (full-day coverage)</li>
                             </ul>
                             <div class="bg-blue-100 p-3 rounded border-l-4 border-blue-400">
                                 <div class="text-sm font-semibold text-blue-900">Estimated Cost Breakdown:</div>
                                 <div class="text-sm text-blue-800 mt-1">
-                                    • <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">Champ Camp</a> (8 weeks): $1,520<br>
-                                    • <a href="https://www.echovermont.org" target="_blank" class="text-green-600 hover:text-green-800 underline">ECHO</a> camp: $440 + $120 (aftercare) = $560<br>
-                                    • <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">PAL Camp</a> (2 weeks): $380<br>
+                                    • <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">Champ Camp</a> (8 weeks): $1,520<br>
+                                    • <a href="https://www.echovermont.org" target="_blank" class="text-gray-900 hover:text-gray-800 underline">ECHO</a> camp: $440 + $120 (aftercare) = $560<br>
+                                    • <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">PAL Camp</a> (2 weeks): $380<br>
                                     • <strong>Total: ~$2,460</strong>
                                 </div>
                             </div>
@@ -1389,56 +1425,135 @@
                     <h3 class="text-lg font-semibold text-gray-900 mb-4">Your Action Plan: A Registration Checklist</h3>
                     <p class="text-gray-700 mb-4">The key to securing your desired summer camps is preparation and timing. Follow this timeline to stay ahead of the curve.</p>
                     
-                    <div class="space-y-6">
-                        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4">
-                            <h4 class="font-semibold text-yellow-900 mb-2">December/Early January: Research & Decide</h4>
-                            <ul class="text-yellow-800 text-sm space-y-1">
-                                <li>• Use this report to finalize your top 3-5 camp choices for each week you need coverage.</li>
-                                <li>• Create a calendar with every registration and lottery opening date and time. Set reminders on your phone for 15 minutes before each one.</li>
-                                <li>• Visit the camps' websites and create accounts on their registration portals (e.g., <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">CivicRec for BPRW</a>, <a href="https://www.burlingtoncityarts.org" target="_blank" class="text-purple-600 hover:text-purple-800 underline">BCA</a>, <a href="https://vt.audubon.org" target="_blank" class="text-green-600 hover:text-green-800 underline">CampDoc for Audubon</a>) <em>in advance</em>. Add your child and emergency contacts to your profile now to save precious time on registration day.</li>
-                            </ul>
-                        </div>
+                    <div class="relative">
+                        <!-- Timeline line -->
+                        <div class="absolute left-4 top-0 bottom-0 w-0.5 bg-gray-300"></div>
+                        
+                        <!-- Timeline items -->
+                        <div class="space-y-8">
+                            <!-- December/Early January -->
+                            <div class="relative flex items-start">
+                                <div class="flex-shrink-0 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                                    <span class="text-white text-sm font-semibold">1</span>
+                                </div>
+                                <div class="ml-6">
+                                    <h4 class="text-lg font-semibold text-gray-900 mb-3">December/Early January: Research & Decide</h4>
+                                    <ul class="text-gray-700 text-sm space-y-2">
+                                        <li>• Use this report to finalize your top 3-5 camp choices for each week you need coverage.</li>
+                                        <li>• Create a calendar with every registration and lottery opening date and time. Set reminders on your phone for 15 minutes before each one.</li>
+                                        <li>• Visit the camps' websites and create accounts on their registration portals (e.g., <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">CivicRec for BPRW</a>, <a href="https://www.burlingtoncityarts.org" target="_blank" class="text-gray-900 hover:text-purple-800 underline">BCA</a>, <a href="https://vt.audubon.org" target="_blank" class="text-gray-900 hover:text-gray-800 underline">CampDoc for Audubon</a>) <em>in advance</em>. Add your child and emergency contacts to your profile now to save precious time on registration day.</li>
+                                    </ul>
+                                </div>
+                            </div>
 
-                        <div class="bg-blue-50 border-l-4 border-blue-400 p-4">
-                            <h4 class="font-semibold text-blue-900 mb-2">Mid-January to Early February: Apply & Register</h4>
-                            <ul class="text-blue-800 text-sm space-y-1">
-                                <li>• <strong>Jan 12-14:</strong> Submit applications for <a href="https://shelburnefarms.org" target="_blank" class="text-green-600 hover:text-green-800 underline">Shelburne Farms</a>.</li>
-                                <li>• <strong>Jan 15-31:</strong> Enter the lottery for <a href="https://www.crowspath.org" target="_blank" class="text-green-600 hover:text-green-800 underline">Crow's Path</a>.</li>
-                                <li>• <strong>Feb 1:</strong> Register for <a href="https://www.flynncenter.org" target="_blank" class="text-purple-600 hover:text-purple-800 underline">The Flynn</a> camps.</li>
-                                <li>• <strong>Feb 5 (12:00 PM):</strong> Be online and logged in for <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-blue-600 hover:text-blue-800 underline">BPRW</a> and <a href="https://www.burlingtoncityarts.org" target="_blank" class="text-purple-600 hover:text-purple-800 underline">BCA</a> resident registration. Add camps to your cart and check out promptly; some systems have a 15-minute cart timer.</li>
-                                <li>• <strong>Feb 14-23:</strong> Enter the lottery for <a href="https://vt.audubon.org" target="_blank" class="text-green-600 hover:text-green-800 underline">Audubon Vermont</a>.</li>
-                            </ul>
-                        </div>
+                            <!-- Mid-January to Early February -->
+                            <div class="relative flex items-start">
+                                <div class="flex-shrink-0 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                                    <span class="text-white text-sm font-semibold">2</span>
+                                </div>
+                                <div class="ml-6">
+                                    <h4 class="text-lg font-semibold text-gray-900 mb-3">Mid-January to Early February: Apply & Register</h4>
+                                    <ul class="text-gray-700 text-sm space-y-2">
+                                        <li>• <strong>Jan 12-14:</strong> Submit applications for <a href="https://shelburnefarms.org" target="_blank" class="text-gray-900 hover:text-gray-800 underline">Shelburne Farms</a>.</li>
+                                        <li>• <strong>Jan 15-31:</strong> Enter the lottery for <a href="https://www.crowspath.org" target="_blank" class="text-gray-900 hover:text-gray-800 underline">Crow's Path</a>.</li>
+                                        <li>• <strong>Feb 1:</strong> Register for <a href="https://www.flynncenter.org" target="_blank" class="text-gray-900 hover:text-purple-800 underline">The Flynn</a> camps.</li>
+                                        <li>• <strong>Feb 5 (12:00 PM):</strong> Be online and logged in for <a href="https://www.burlingtonvt.gov/parks" target="_blank" class="text-gray-900 hover:text-blue-800 underline">BPRW</a> and <a href="https://www.burlingtoncityarts.org" target="_blank" class="text-gray-900 hover:text-purple-800 underline">BCA</a> resident registration. Add camps to your cart and check out promptly; some systems have a 15-minute cart timer.</li>
+                                        <li>• <strong>Feb 14-23:</strong> Enter the lottery for <a href="https://vt.audubon.org" target="_blank" class="text-gray-900 hover:text-gray-800 underline">Audubon Vermont</a>.</li>
+                                    </ul>
+                                </div>
+                            </div>
 
-                        <div class="bg-green-50 border-l-4 border-green-400 p-4">
-                            <h4 class="font-semibold text-green-900 mb-2">March & April: Confirm & Finalize</h4>
-                            <ul class="text-green-800 text-sm space-y-1">
-                                <li>• Watch your email for lottery results in early March.</li>
-                                <li>• Pay all required deposits by the deadlines (e.g., March 23 for Audubon) to secure your spots. Failure to do so will result in your spot being given to someone on the waitlist.</li>
-                                <li>• If you require financial aid, apply for scholarships as soon as you have a confirmed spot.</li>
-                                <li>• If you are waitlisted, remain hopeful. Openings frequently become available as other families' plans change.</li>
-                            </ul>
-                        </div>
+                            <!-- March & April -->
+                            <div class="relative flex items-start">
+                                <div class="flex-shrink-0 w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center">
+                                    <span class="text-white text-sm font-semibold">3</span>
+                                </div>
+                                <div class="ml-6">
+                                    <h4 class="text-lg font-semibold text-gray-900 mb-3">March & April: Confirm & Finalize</h4>
+                                    <ul class="text-gray-700 text-sm space-y-2">
+                                        <li>• Watch your email for lottery results in early March.</li>
+                                        <li>• Pay all required deposits by the deadlines (e.g., March 23 for Audubon) to secure your spots. Failure to do so will result in your spot being given to someone on the waitlist.</li>
+                                        <li>• If you require financial aid, apply for scholarships as soon as you have a confirmed spot.</li>
+                                        <li>• If you are waitlisted, remain hopeful. Openings frequently become available as other families' plans change.</li>
+                                    </ul>
+                                </div>
+                            </div>
 
-                        <div class="bg-purple-50 border-l-4 border-purple-400 p-4">
-                            <h4 class="font-semibold text-purple-900 mb-2">May: Paperwork & Logistics</h4>
-                            <ul class="text-purple-800 text-sm space-y-1">
-                                <li>• Submit all required medical, immunization, and medication administration forms. Most camps require these at least one week prior to attendance.</li>
-                                <li>• If you need special transportation (like the BPRW shuttle), submit your request by the May 31 deadline.</li>
-                                <li>• Begin planning your daily packing list (sunscreen, water bottle, change of clothes, etc.).</li>
-                            </ul>
-                        </div>
+                            <!-- May -->
+                            <div class="relative flex items-start">
+                                <div class="flex-shrink-0 w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center">
+                                    <span class="text-white text-sm font-semibold">4</span>
+                                </div>
+                                <div class="ml-6">
+                                    <h4 class="text-lg font-semibold text-gray-900 mb-3">May: Paperwork & Logistics</h4>
+                                    <ul class="text-gray-700 text-sm space-y-2">
+                                        <li>• Submit all required medical, immunization, and medication administration forms. Most camps require these at least one week prior to attendance.</li>
+                                        <li>• If you need special transportation (like the BPRW shuttle), submit your request by the May 31 deadline.</li>
+                                        <li>• Begin planning your daily packing list (sunscreen, water bottle, change of clothes, etc.).</li>
+                                    </ul>
+                                </div>
+                            </div>
 
-                        <div class="bg-orange-50 border-l-4 border-orange-400 p-4">
-                            <h4 class="font-semibold text-orange-900 mb-2">One Week Before Each Camp:</h4>
-                            <ul class="text-orange-800 text-sm space-y-1">
-                                <li>• Look for a "Welcome Email" from the camp director. This email will contain the most up-to-date, specific details on drop-off/pick-up locations and times, a final packing list, and staff contact information. Review it carefully.</li>
-                            </ul>
+                            <!-- One Week Before -->
+                            <div class="relative flex items-start">
+                                <div class="flex-shrink-0 w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
+                                    <span class="text-white text-sm font-semibold">5</span>
+                                </div>
+                                <div class="ml-6">
+                                    <h4 class="text-lg font-semibold text-gray-900 mb-3">One Week Before Each Camp:</h4>
+                                    <ul class="text-gray-700 text-sm space-y-2">
+                                        <li>• Look for a "Welcome Email" from the camp director. This email will contain the most up-to-date, specific details on drop-off/pick-up locations and times, a final packing list, and staff contact information. Review it carefully.</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+
+                <div class="mb-8">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-4">Camp Locations Map</h3>
+                    <p class="text-gray-700 mb-4">Interactive map showing the locations of all summer camps in the Burlington area.</p>
+                    
+                    <div class="bg-gray-100 rounded-lg p-4 mb-4">
+                        <div id="map" style="height: 500px; width: 100%; border-radius: 8px;"></div>
+                    </div>
+                    
+                    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                        <div class="bg-blue-50 p-3 rounded-lg">
+                            <div class="flex items-center space-x-2 mb-2">
+                                <div class="w-4 h-4 bg-blue-500 rounded-full"></div>
+                                <span class="font-semibold text-blue-900">City-Run Programs</span>
+                            </div>
+                            <p class="text-blue-800 text-sm">Burlington Parks & Rec</p>
+                        </div>
+                        
+                        <div class="bg-green-50 p-3 rounded-lg">
+                            <div class="flex items-center space-x-2 mb-2">
+                                <div class="w-4 h-4 bg-green-500 rounded-full"></div>
+                                <span class="font-semibold text-gray-900">Nature/Science</span>
+                            </div>
+                            <p class="text-gray-800 text-sm">Audubon Vermont, Crow's Path, ECHO, Shelburne Farms</p>
+                        </div>
+                        
+                        <div class="bg-purple-50 p-3 rounded-lg">
+                            <div class="flex items-center space-x-2 mb-2">
+                                <div class="w-4 h-4 bg-purple-500 rounded-full"></div>
+                                <span class="font-semibold text-purple-900">Arts/Performance</span>
+                            </div>
+                            <p class="text-purple-800 text-sm">Burlington City Arts, The Flynn</p>
+                        </div>
+                        
+                        <div class="bg-orange-50 p-3 rounded-lg">
+                            <div class="flex items-center space-x-2 mb-2">
+                                <div class="w-4 h-4 bg-orange-500 rounded-full"></div>
+                                <span class="font-semibold text-orange-900">Community Programs</span>
+                            </div>
+                            <p class="text-orange-800 text-sm">Greater Burlington YMCA</p>
+                        </div>
+                    </div>
+                </div>
     </main>
 
     <!-- Footer -->
@@ -1589,6 +1704,100 @@
                     }
                     updateCostCalculator();
                 });
+            });
+
+            // Initialize map
+            const map = L.map('map').setView([44.4759, -73.2121], 11);
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+
+            // Camp locations with exact coordinates
+            const campLocations = [
+                {
+                    name: 'Burlington Parks & Rec',
+                    lat: 44.4616946,
+                    lng: -73.2155518,
+                    type: 'city',
+                    color: 'blue',
+                    description: 'Champ Camp & PAL Camp<br>645 Pine Street, Suite B<br>Burlington, VT 05401<br>Multiple locations across the city'
+                },
+                {
+                    name: 'Audubon Vermont',
+                    lat: 44.346965,
+                    lng: -72.996541,
+                    type: 'nature',
+                    color: 'green',
+                    description: 'Nature camps<br>255 Sherman Hollow Road<br>Huntington, VT 05462<br>~30-40 min from Burlington'
+                },
+                {
+                    name: 'Burlington City Arts',
+                    lat: 44.4765916,
+                    lng: -73.213341,
+                    type: 'arts',
+                    color: 'purple',
+                    description: 'Arts & crafts camps<br>Burlington, VT<br>Multiple locations'
+                },
+                {
+                    name: 'Greater Burlington YMCA',
+                    lat: 44.4778247,
+                    lng: -73.210432,
+                    type: 'community',
+                    color: 'orange',
+                    description: 'Camp Koda<br>298 College St<br>Burlington, VT 05401<br>Downtown location'
+                },
+                {
+                    name: 'Crow\'s Path',
+                    lat: 44.496387,
+                    lng: -73.240009,
+                    type: 'nature',
+                    color: 'green',
+                    description: 'Nature education<br>Wilderness programs<br>Rock Point, Burlington, VT'
+                },
+                {
+                    name: 'The Flynn',
+                    lat: 44.4756691,
+                    lng: -73.2131909,
+                    type: 'arts',
+                    color: 'purple',
+                    description: 'Performing arts camps<br>Main Street<br>Burlington, VT'
+                },
+                {
+                    name: 'ECHO Leahy Center',
+                    lat: 44.476524,
+                    lng: -73.220783,
+                    type: 'nature',
+                    color: 'green',
+                    description: 'Science & nature camps<br>1 College Street<br>Burlington, VT 05401<br>Waterfront location'
+                },
+                {
+                    name: 'Shelburne Farms',
+                    lat: 44.4000,
+                    lng: -73.2500,
+                    type: 'nature',
+                    color: 'green',
+                    description: 'Farm & nature camps<br>1611 Harbor Road<br>Shelburne, VT 05482<br>~15-20 min from Burlington'
+                }
+            ];
+
+            // Add markers for each camp
+            campLocations.forEach(camp => {
+                const marker = L.marker([camp.lat, camp.lng], {
+                    icon: L.divIcon({
+                        className: 'custom-marker',
+                        html: `<div style="background-color: ${camp.color}; width: 20px; height: 20px; border-radius: 50%; border: 2px solid white; box-shadow: 0 2px 4px rgba(0,0,0,0.3);"></div>`,
+                        iconSize: [20, 20],
+                        iconAnchor: [10, 10]
+                    })
+                }).addTo(map);
+
+                marker.bindPopup(`
+                    <div style="min-width: 200px;">
+                        <h3 style="margin: 0 0 8px 0; color: #1f2937; font-weight: bold;">${camp.name}</h3>
+                        <p style="margin: 0; color: #6b7280; font-size: 14px;">${camp.description}</p>
+                    </div>
+                `);
             });
             
         });
